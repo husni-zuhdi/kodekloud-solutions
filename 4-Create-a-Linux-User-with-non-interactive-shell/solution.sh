@@ -4,6 +4,7 @@
 # As per the tool's requirements they need to create a user with a non-interactive shell.
 # Therefore, create a user named john with a non-interactive shell on the App Server 2
 
+# Login as root
 sudo su -
 
 # Your username
