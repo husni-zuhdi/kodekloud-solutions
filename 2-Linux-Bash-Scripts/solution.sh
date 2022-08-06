@@ -11,6 +11,9 @@
 # d. Please make sure script won't ask for password while copying the archive file.
 #    Additionally, the respective server user (for example, tony in case of App Server 1) must be able to run it.
 
+# Login as root
+sudo su -
+
 # Create and save the script
 cat <<'EOT' >> /scripts/official_backup.sh
 #!/bin/bash
