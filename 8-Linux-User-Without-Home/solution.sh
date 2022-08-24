@@ -4,6 +4,8 @@
 # They are finished with all apps except for App Server 3 in Stratos Datacenter.
 
 # Create a user named javed in App Server 3 without a home directory.
+# References:
+# [1] https://linuxhint.com/add-user-linux/
 
 # Login as root
 sudo su -
