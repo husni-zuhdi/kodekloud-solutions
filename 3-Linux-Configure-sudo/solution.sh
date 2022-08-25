@@ -11,4 +11,4 @@ sudo su -
 
 # Change to suit your username
 export USER_NAME=mariyam #your_user_name
-sudo echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
