@@ -25,10 +25,29 @@
 # [8] https://linuxhint.com/replace_string_in_file_bash/
 # [9] https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-centos-7-via-yum
 
-# In jump_host server, run this
+# Login to your server
+# Login as root
+sudo su -
+
 # Setup Variables
-export SERVER_HOST=stapp02 # your_server_hostname
-export SERVER_USER=steve # your_server_user
-export FILE_NAME=ROOT.war
-scp /tmp/$FILE_NAME $SERVER_USER@$SERVER_HOST:/home/$SERVER_USER/$FILE_NAME
+export PORT=8085 # your_running_port
+export SERVER_USER=steve # your_server_username
+
+# Install tomcat
+yum install tomcat tomcat-webapps tomcat-admin-webapps tomcat-docs-webapp tomcat-javadoc -y
+
+# Edit /usr/share/tomcat/conf/server.xml file
+# For port adjustment and restart tomcat
+sed -i "s/8080/$PORT/" /usr/share/tomcat/conf/server.xml
+
+# Move the war file and deploy 
+rm -rf /usr/share/tomcat/webapps/ROOT
+cp /home/$SERVER_USER/ROOT.war /usr/share/tomcat/webapps/ROOT.war
+# systemctl restart tomcat
+
+# Start, enable, and check status of  tomcat
+# Enable, start, and check status of tomcat service
+systemctl enable tomcat
+systemctl start tomcat
+systemctl status tomcat
 
