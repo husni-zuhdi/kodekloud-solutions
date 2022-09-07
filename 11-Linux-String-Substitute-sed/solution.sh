@@ -5,6 +5,10 @@
 # b. Replace all occurrence of word the to for and save results in /home/BSD_REPLACE.txt file.
 # Note: Let's say you are asked to replace word to with from. In that case, make sure not to alter any words containing this string;
 # for example upto, contributor etc.
+# References:
+# [1] https://www.tecmint.com/linux-sed-command-tips-tricks/
+# [2] https://linuxhint.com/sed-command-to-delete-a-line/
+# [3] https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
 
 # Login as root
 sudo su -
