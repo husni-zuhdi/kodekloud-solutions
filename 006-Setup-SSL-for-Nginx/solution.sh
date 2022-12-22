@@ -33,9 +33,7 @@ EOT
 cat <<'EOT' > /etc/nginx/conf.d/nautilus.conf
 server {
 
-listen   443;
-
-ssl    on;
+listen   443 ssl;
 ssl_certificate    /etc/ssl/nautilus.crt;
 ssl_certificate_key    /etc/ssl/nautilus.key;
 
