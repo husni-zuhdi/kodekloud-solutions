@@ -14,11 +14,14 @@
 # Login as root
 sudo su -
 
+# Variables
+export BACKUP=official
+
 # Create and save the script
-cat <<'EOT' >> /scripts/official_backup.sh
+cat <<EOT > /scripts/"$BACKUP"_backup.sh
 #!/bin/bash
-zip -r /backup/xfusioncorp_official.zip /var/www/html/official
-scp /backup/xfusioncorp_official.zip clint@stbkp01:/backup/
+zip -r /backup/xfusioncorp_$BACKUP.zip /var/www/html/$BACKUP
+scp /backup/xfusioncorp_$BACKUP.zip clint@stbkp01:/backup/
 EOT
 
 # Create ssh keygen without prompts
@@ -29,4 +32,4 @@ yes '' | ssh-keygen -N ''
 ssh-copy-id clint@stbkp01 # You need to enter the password
 
 # Set script as executable
-chmod +x /scripts/official_backup.sh
+chmod +x /scripts/$BACKUP_backup.sh
